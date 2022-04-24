@@ -31,4 +31,26 @@ public class player : MonoBehaviour
             transform.Translate(-moveSpeed*Time.deltaTime, 0, 0);
         }
     }
+
+    // private 可省略，因為是電腦的預設值
+    // OnCollisionEnter (會一直重複的被執行直到遊戲結束為止)
+    // other 就是碰撞到的物件
+    private void OnCollisionEnter(Collision other) 
+    {
+        if(other.gameObject.tag == "Floor1")
+        {
+            Debug.Log("撞到了第一種階梯");
+        }
+
+        else if(other.gameObject.tag == "Floor2")
+        {
+            Debug.Log("撞到了第二種階梯");
+        }
+
+        else if(other.gameObject.tag == "DeathLine")
+        {
+            Debug.Log("你輸了");
+        }
+
+    }
 }
