@@ -46,8 +46,11 @@ public class player : MonoBehaviour
         {
             Debug.Log("撞到了第二種階梯");
         }
+    }
 
-        else if(other.gameObject.tag == "DeathLine")
+    void OnTriggerEnter(Collider other) 
+    {
+        if(other.gameObject.tag == "DeathLine")
         {
             Debug.Log("你輸了");
         }
